@@ -1,10 +1,10 @@
-# 🎄 Secret Santa Web Application - Setup Guide
+# Secret Santa Web Application - Setup Guide
 
 A complete web application for creating Secret Santa assignments and managing wishlists using Flask and MySQL.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Features](#features)
@@ -15,10 +15,9 @@ A complete web application for creating Secret Santa assignments and managing wi
 7. [Project Structure](#project-structure)
 8. [Usage Guide](#usage-guide)
 9. [Troubleshooting](#troubleshooting)
-
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 The Secret Santa Application is a web-based tool that helps organize Secret Santa exchanges. It provides functionality to:
 - Randomly assign Secret Santa pairs
@@ -33,7 +32,7 @@ The Secret Santa Application is a web-based tool that helps organize Secret Sant
 
 ---
 
-## ✨ Features
+## Features
 
 ### 1. **Create Secret Santa Assignments**
    - Enter participant names (comma or newline separated)
@@ -61,7 +60,7 @@ The Secret Santa Application is a web-based tool that helps organize Secret Sant
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -82,7 +81,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Step 1: Clone/Download the Project
 
@@ -102,8 +101,6 @@ secret_santa_app/
 │   ├── view_secret_santa.html
 │   ├── add_wishlist.html
 │   ├── view_wishlists.html
-│   ├── 404.html
-│   └── 500.html
 │
 └── README.md               # This file
 ```
@@ -126,7 +123,7 @@ pip install MySQLdb-python==1.2.5b1
 
 ---
 
-## 🗄️ Database Configuration
+## Database Configuration
 
 ### Step 1: Open MySQL Command Line or MySQL Workbench
 
@@ -181,7 +178,7 @@ app.config['MYSQL_PASSWORD'] = ''               # If no password (default for lo
 
 ---
 
-## ▶️ Running the Application
+## Running the Application
 
 ### Step 1: Navigate to Project Directory
 
@@ -213,7 +210,9 @@ You should see the Secret Santa homepage! 🎉
 
 ---
 
-## 📁 Project Structure
+## Project Structure
+
+![Project Structure](images/project-structure.png)
 
 ```
 secret_santa_app/
@@ -230,7 +229,6 @@ secret_santa_app/
 │   │   ├── /delete_assignment/<id>
 │   │   ├── /delete_wishlist/<id>
 │   │   └── /clear_all_assignments
-│   └── Error Handlers (404, 500)
 │
 ├── templates/
 │   ├── base.html              # Base template with navbar
@@ -239,8 +237,6 @@ secret_santa_app/
 │   ├── view_secret_santa.html
 │   ├── add_wishlist.html
 │   ├── view_wishlists.html
-│   ├── 404.html               # Error page
-│   └── 500.html               # Error page
 │
 └── Database:
     ├── secret_santa table
@@ -249,7 +245,7 @@ secret_santa_app/
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### 1. **Creating Secret Santa Assignments**
 
@@ -301,7 +297,7 @@ Charlie → Bob (gives gift to Bob)
 
 ---
 
-## 🔧 Database Schema
+## Database Schema
 
 ### secret_santa Table
 
@@ -325,7 +321,7 @@ Charlie → Bob (gives gift to Bob)
 
 ---
 
-## 🔍 Key Functions
+## Key Functions
 
 ### assign_secret_santa(participants)
 Randomly assigns Secret Santa pairs ensuring no one gets themselves.
@@ -347,7 +343,7 @@ Validates participant names for duplicates and minimum count.
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Issue 1: MySQL Connection Error
 **Error:** "Can't connect to MySQL server on 'localhost'"
@@ -412,7 +408,7 @@ app.run(debug=True, host='localhost', port=5001)  # Use 5001 instead
 
 ---
 
-## 🎨 Customization
+## Customization
 
 ### Change Colors
 
@@ -449,7 +445,7 @@ app.run(debug=True, host='localhost', port=8000)  # Use 8000
 
 ---
 
-## 📝 Additional Notes
+## Additional Notes
 
 ### Security Notes
 - Change `secret_key` for production
@@ -473,7 +469,7 @@ app.run(debug=True, host='localhost', port=8000)  # Use 8000
 
 ---
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Check the Troubleshooting section
@@ -482,13 +478,13 @@ For issues or questions:
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available for personal and educational use.
 
 ---
 
-## 🎉 Enjoy!
+## Enjoy!
 
 Happy Secret Santa exchanges! This app was created to make organizing gift exchanges fun and easy.
 
