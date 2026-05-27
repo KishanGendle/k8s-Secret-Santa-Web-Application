@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Wishlist - Secret Santa
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <!-- Main Card -->
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h4 class="mb-0">
+
+                    <i class="fas fa-heart"></i>
+                    Add Your Wishlist
+
+                </h4>
+
+            </div>
+
+            <div class="card-body">
+
+                <!-- Form -->
+
+                <form method="POST"
+                      action="{{ url_for('add_wishlist') }}">
+
+                    <!-- Info Message -->
+
+                    <div class="alert alert-info">
+
+                        <i class="fas fa-info-circle"></i>
+
+                        Share your favorite gift ideas with your Secret Santa!
+
+                    </div>
+
+                    <!-- Name -->
+
+                    <div class="mb-4">
+
+                        <label for="name" class="form-label">
+
+                            <i class="fas fa-user"></i>
+                            Your Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Wishlist -->
+
+                    <div class="mb-4">
+
+                        <label for="wishlist" class="form-label">
+
+                            <i class="fas fa-gift"></i>
+                            Your Wishlist
+
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="wishlist"
+                            name="wishlist"
+                            rows="8"
+                            placeholder="Example:
+
+- Headphones
+- Hoodie
+- Coffee Mug
+- Books
+- Smart Watch
+- Shoes
+
+Add your favorite items here..."
+                            required>
+                        </textarea>
+
+                        <small class="text-muted">
+
+                            Be specific about color, size, brand, etc.
+
+                        </small>
+
+                    </div>
+
+                    <!-- Buttons -->
+
+                    <div class="d-grid gap-2 d-md-flex">
+
+                        <button type="submit"
+                                class="btn btn-primary btn-lg flex-fill">
+
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Wishlist
+
+                        </button>
+
+                        <a href="{{ url_for('view_wishlists') }}"
+                           class="btn btn-secondary btn-lg">
+
+                            <i class="fas fa-list"></i>
+                            View Wishlists
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Example Card -->
+
+        <div class="card mt-4">
+
+            <div class="card-header">
+
+                <h5 class="mb-0">
+
+                    <i class="fas fa-lightbulb"></i>
+                    Wishlist Ideas
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <!-- Electronics -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <h6>Electronics</h6>
+
+                        <ul class="small text-muted">
+
+                            <li>Wireless Earbuds</li>
+
+                            <li>Bluetooth Speaker</li>
+
+                            <li>Gaming Mouse</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Fashion -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <h6>Fashion</h6>
+
+                        <ul class="small text-muted">
+
+                            <li>Jacket</li>
+
+                            <li>Hoodie</li>
+
+                            <li>Sneakers</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Books -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <h6>Books & Entertainment</h6>
+
+                        <ul class="small text-muted">
+
+                            <li>Atomic Habits</li>
+
+                            <li>Board Games</li>
+
+                            <li>Netflix Gift Card</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Home -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <h6>Home & Comfort</h6>
+
+                        <ul class="small text-muted">
+
+                            <li>Blanket</li>
+
+                            <li>Coffee Mug</li>
+
+                            <li>Scented Candles</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

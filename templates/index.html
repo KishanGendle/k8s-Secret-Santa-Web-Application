@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Secret Santa{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-lg-10">
+        <!-- Welcome Section -->
+        <div class="text-center mb-5">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: white; margin-bottom: 15px;">
+                🎄 Secret Santa 🎁
+            </h1>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.95); font-weight: 500;">
+                Spread joy and mystery this season!
+            </p>
+        </div>
+
+        <!-- Main Cards Grid -->
+        <div class="row g-4 justify-content-center">
+            <!-- Create Secret Santa Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100" style="border: 3px solid white; background: white;">
+                    <div class="card-header text-center py-4">
+                        <i class="fas fa-wand-magic-sparkles icon-large" style="color: white;"></i>
+                        <h5 class="card-title">Create Secret Santa</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text mb-4">
+                            Enter participant names and let the magic happen! Our algorithm ensures fair and random assignments.
+                        </p>
+                        <a href="{{ url_for('create_secret_santa') }}" class="btn btn-primary w-100">
+                            <i class="fas fa-arrow-right"></i> Start Creating
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View Assignments Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100" style="border: 3px solid white; background: white;">
+                    <div class="card-header text-center py-4">
+                        <i class="fas fa-eye icon-large" style="color: white;"></i>
+                        <h5 class="card-title">View Assignments</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text mb-4">
+                            Check all the Secret Santa assignments that have been created and see who is gifting to whom!
+                        </p>
+                        <a href="{{ url_for('view_secret_santa') }}" class="btn btn-primary w-100">
+                            <i class="fas fa-arrow-right"></i> View All
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Wishlist Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100" style="border: 3px solid white; background: white;">
+                    <div class="card-header text-center py-4">
+                        <i class="fas fa-heart icon-large" style="color: white;"></i>
+                        <h5 class="card-title">Add Wishlist</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text mb-4">
+                            Share your wishlist with everyone! Let your Secret Santa know what gifts you'd love to receive.
+                        </p>
+                        <a href="{{ url_for('add_wishlist') }}" class="btn btn-primary w-100">
+                            <i class="fas fa-arrow-right"></i> Add Wishlist
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card" style="background: rgba(255, 255, 255, 0.95);">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-3">
+                            <i class="fas fa-lightbulb" style="color: #667eea;"></i> How It Works
+                        </h5>
+                        <ol class="mb-0">
+                            <li class="mb-2"><strong>Create:</strong> Enter names of all participants (minimum 2)</li>
+                            <li class="mb-2"><strong>Assign:</strong> Our algorithm randomly assigns Secret Santas (no one gets themselves!)</li>
+                            <li class="mb-2"><strong>Share:</strong> View assignments and share wishlists</li>
+                            <li><strong>Gift:</strong> Shop and give gifts to your assigned person!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
