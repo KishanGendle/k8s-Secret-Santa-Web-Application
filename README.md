@@ -212,7 +212,7 @@ You should see the Secret Santa homepage! 🎉
 
 ## Project Structure
 
-![Project Structure](images/project-structure.png)
+![Project Structure](project-structure.png)
 
 ```
 secret_santa_app/
