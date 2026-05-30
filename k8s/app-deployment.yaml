@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secret-santa-app
+  labels:
+    app: secret-santa
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: secret-santa
+
+  template:
+    metadata:
+      labels:
+        app: secret-santa
+
+    spec:
+      containers:
+        - name: app-container
+          image: kishangendle/secret-santa-app:latest
+
+          ports:
+            - containerPort: 5000
+
+          imagePullPolicy: Always
+
+          env:
+            - name: MYSQL_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_HOST
+
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_USER
+
+            - name: MYSQL_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_DB
+
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD

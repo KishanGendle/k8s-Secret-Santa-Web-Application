@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 256Mi
+
+  accessModes:
+    - ReadWriteOnce
+
+  volumeMode: Filesystem
+
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /home/ubuntu/k8s-Secret-Santa-Web-Application/mysql
