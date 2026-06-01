@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: secret-santa
+
+spec:
+  replicas: {{ .Values.app.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: secret-santa
+
+  template:
+
+    metadata:
+      labels:
+        app: secret-santa
+
+    spec:
+
+      containers:
+
+        - name: secret-santa-con
+
+          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
+
+          imagePullPolicy: {{ .Values.app.image.pullPolicy }}
+
+          ports:
+            - containerPort: {{ .Values.app.service.port }}
+
+          env:
+
+            - name: MYSQL_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_HOST
+
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_USER
+
+            - name: MYSQL_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_DB
+
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD

@@ -1,0 +1,21 @@
+secret:
+  mysqlPassword: "admin"
+
+app:
+  replicaCount: 1
+
+  image:
+    repository: kishangendle/secret-santa-app
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  service:
+    type: NodePort
+    port: 5000
+    targetPort: 5000
+    nodePort: 30080
+
+  env:
+    mysqlHost: 10.104.177.6
+    mysqlUser: root
+    mysqlDb: secret_santa_db

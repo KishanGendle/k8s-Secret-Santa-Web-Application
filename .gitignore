@@ -6,4 +6,4 @@ __pycache__/
 CODE_DOCUMENTATION.md
 CONFIGURATION.md
 QUICKSTART.md
-.vscode/
+.vscode/get_helm.sh

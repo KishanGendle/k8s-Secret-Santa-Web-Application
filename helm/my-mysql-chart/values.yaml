@@ -1,0 +1,18 @@
+image:
+  repository: mysql
+  tag: "8.0"
+  pullPolicy: IfNotPresent
+
+# Decoded from your original 'YWRtaW4=' payload
+mysqlPassword: "admin"
+
+# Variables matching your mysql-config setup
+config:
+  mysqlHost: "mysql"
+  mysqlUser: "root"
+  mysqlDb: "secret_santa_db"
+
+# Storage Configuration matching your PV/PVC requirements
+storage:
+  size: 256Mi
+  hostPath: "/home/ubuntu/k8s-Secret-Santa-Web-Application/mysql"

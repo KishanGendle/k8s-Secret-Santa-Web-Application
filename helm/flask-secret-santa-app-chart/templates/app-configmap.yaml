@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: app-config
+
+data:
+  MYSQL_HOST: "{{ .Values.app.env.mysqlHost }}"
+  MYSQL_USER: "{{ .Values.app.env.mysqlUser }}"
+  MYSQL_DB: "{{ .Values.app.env.mysqlDb }}"
